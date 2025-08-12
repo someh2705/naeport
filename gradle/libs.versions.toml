@@ -2,6 +2,7 @@
 androidGradlePlugin = "8.12.0"
 androidLifecycleKtx = "2.9.2"
 androidxActivityCompose = "1.10.1"
+androidxAppcompat = "1.7.1"
 androidxCoreKtx = "1.16.0"
 androidxEspressoCore = "3.7.0"
 androidxJUnit = "1.3.0"
@@ -12,6 +13,7 @@ ktlint = "13.0.0"
 
 [libraries]
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidxActivityCompose" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidxAppcompat" }
 androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
 androidx-compose-material3 = { module = "androidx.compose.material3:material3" }
 androidx-compose-ui = { module = "androidx.compose.ui:ui" }
@@ -34,8 +36,9 @@ ktlint-gradle-plugin = { module = "org.jlleitschuh.gradle:ktlint-gradle", versio
 
 [bundles]
 default-dependencies = [
+    "androidx-appcompat",
+    "androidx-core-ktx",
     "androidx-lifecycle-runtime-ktx",
-    "androidx-core-ktx"
 ]
 
 default-test-dependencies = [
@@ -43,8 +46,8 @@ default-test-dependencies = [
 ]
 
 default-android-test-dependencies = [
+    "androidx-espresso-core",
     "androidx-junit",
-    "androidx-espresso-core"
 ]
 
 androidx-compose = [
@@ -55,7 +58,7 @@ androidx-compose = [
 ]
 
 androidx-compose-android-test = [
-    "androidx-compose-ui-test-junit4",
+#    "androidx-compose-ui-test-junit4", # configuration-cache errors
 ]
 
 androidx-compose-debug = [
@@ -65,12 +68,14 @@ androidx-compose-debug = [
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }
 
 # convention
 naeport-android-application = { id = "naeport.android.application" }
+naeport-android-library = { id = "naeport.android.library" }
 naeport-compose = { id = "naeport.compose" }
 naeport-static-analysis = { id = "naeport.static.analysis" }
 

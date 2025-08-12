@@ -22,3 +22,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "naeport"
 include(":app")
+include(":core:design")

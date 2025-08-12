@@ -16,6 +16,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
             apply(plugin = "com.android.application")
             apply(plugin = "org.jetbrains.kotlin.android")
             apply(plugin = "naeport.compose")
+            apply(plugin = "naeport.static.analysis")
 
             extensions.configure<ApplicationExtension> {
                 compileSdk = 36
@@ -29,12 +30,12 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                     sourceCompatibility = JavaVersion.VERSION_11
                     targetCompatibility = JavaVersion.VERSION_11
                 }
+            }
 
-                dependencies {
-                    "implementation"(libs.findBundle("default-dependencies").get())
-                    "testImplementation"(libs.findBundle("default-test-dependencies").get())
-                    "androidTestImplementation"(libs.findBundle("default-android-test-dependencies").get())
-                }
+            dependencies {
+                "implementation"(libs.findBundle("default-dependencies").get())
+                "testImplementation"(libs.findBundle("default-test-dependencies").get())
+                "androidTestImplementation"(libs.findBundle("default-android-test-dependencies").get())
             }
 
             extensions.configure<KotlinAndroidProjectExtension> {

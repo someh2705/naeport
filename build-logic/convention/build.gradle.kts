@@ -15,6 +15,10 @@ gradlePlugin {
             id = libs.plugins.naeport.android.application.get().pluginId
             implementationClass = "AndroidApplicationConventionPlugin"
         }
+        register("androidLibrary") {
+            id = libs.plugins.naeport.android.library.get().pluginId
+            implementationClass = "AndroidLibraryConventionPlugin"
+        }
         register("compose") {
             id = libs.plugins.naeport.compose.get().pluginId
             implementationClass = "AndroidComposeConventionPlugin"

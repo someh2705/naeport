@@ -1,4 +1,4 @@
-package com.someh.naeport.ui.theme
+package com.someh.core.design
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

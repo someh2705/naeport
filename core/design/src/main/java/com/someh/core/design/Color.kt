@@ -1,4 +1,4 @@
-package com.someh.naeport.ui.theme
+package com.someh.core.design
 
 import androidx.compose.ui.graphics.Color
 

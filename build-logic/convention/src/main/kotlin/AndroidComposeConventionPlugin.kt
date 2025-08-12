@@ -1,10 +1,12 @@
 import com.android.build.api.dsl.ApplicationExtension
+import com.android.build.gradle.LibraryExtension
 import com.someh.naeport.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
+import org.gradle.kotlin.dsl.findByType
 
 class AndroidComposeConventionPlugin : Plugin<Project> {
 
@@ -12,9 +14,19 @@ class AndroidComposeConventionPlugin : Plugin<Project> {
         with(target) {
             apply(plugin = "org.jetbrains.kotlin.plugin.compose")
 
-            extensions.configure<ApplicationExtension> {
-                buildFeatures {
-                    compose = true
+            if (extensions.findByType<ApplicationExtension>() != null) {
+                extensions.configure<ApplicationExtension> {
+                    buildFeatures {
+                        compose = true
+                    }
+                }
+            }
+
+            if (extensions.findByType<LibraryExtension>() != null) {
+                extensions.configure<LibraryExtension> {
+                    buildFeatures {
+                        compose = true
+                    }
                 }
             }
 

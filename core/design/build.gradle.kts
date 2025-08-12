@@ -1,16 +1,12 @@
 plugins {
-    alias(libs.plugins.naeport.android.application)
+    alias(libs.plugins.naeport.android.library)
 }
 
 android {
-    namespace = "com.someh.naeport"
-
+    namespace = "com.someh.naeport.core.design"
     defaultConfig {
-        applicationId = "com.someh.naeport"
-        versionCode = 1
-        versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -22,8 +18,4 @@ android {
             )
         }
     }
-}
-
-dependencies {
-    implementation(project(":core:design"))
 }
