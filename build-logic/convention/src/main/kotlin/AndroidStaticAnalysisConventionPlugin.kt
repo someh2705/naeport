@@ -13,7 +13,7 @@ class AndroidStaticAnalysisConventionPlugin : Plugin<Project> {
 
             extensions.configure<KtlintExtension> {
                 android.set(true)
-                ignoreFailures.set(true)
+                ignoreFailures.set(false)
                 additionalEditorconfig.set(
                     mapOf(
                         "max_line_length" to "120",
