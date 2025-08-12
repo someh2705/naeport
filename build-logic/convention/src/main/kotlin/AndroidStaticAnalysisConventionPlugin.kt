@@ -18,6 +18,8 @@ class AndroidStaticAnalysisConventionPlugin : Plugin<Project> {
                     reporter(ReporterType.CHECKSTYLE)
                 }
             }
+
+            tasks.getByPath("preBuild").dependsOn("ktlintFormat")
         }
     }
 }
