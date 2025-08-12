@@ -1,7 +1,6 @@
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-
 plugins {
     alias(libs.plugins.naeport.android.application)
+    alias(libs.plugins.naeport.static.analysis)
     alias(libs.plugins.kotlin.compose)
 }
 

@@ -15,6 +15,7 @@ dependencyResolutionManagement {
             }
         }
         mavenCentral()
+        maven("https://plugins.gradle.org/m2/") // for ktlint gradle plugin
     }
     versionCatalogs {
         create("libs") {
