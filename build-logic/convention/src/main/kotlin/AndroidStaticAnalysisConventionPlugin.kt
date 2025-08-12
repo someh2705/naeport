@@ -14,6 +14,12 @@ class AndroidStaticAnalysisConventionPlugin : Plugin<Project> {
             extensions.configure<KtlintExtension> {
                 android.set(true)
                 ignoreFailures.set(true)
+                additionalEditorconfig.set(
+                    mapOf(
+                        "max_line_length" to "120",
+                        "ktlint_function_naming_ignore_when_annotated_with" to "Composable"
+                    )
+                )
                 reporters {
                     reporter(ReporterType.CHECKSTYLE)
                 }
