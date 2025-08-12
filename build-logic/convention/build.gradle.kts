@@ -15,6 +15,10 @@ gradlePlugin {
             id = libs.plugins.naeport.android.application.get().pluginId
             implementationClass = "AndroidApplicationConventionPlugin"
         }
+        register("compose") {
+            id = libs.plugins.naeport.compose.get().pluginId
+            implementationClass = "AndroidComposeConventionPlugin"
+        }
         register("ktlint") {
             id = libs.plugins.naeport.static.analysis.get().pluginId
             implementationClass = "AndroidStaticAnalysisConventionPlugin"

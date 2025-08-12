@@ -13,6 +13,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
         with(target) {
             apply(plugin = "com.android.application")
             apply(plugin = "org.jetbrains.kotlin.android")
+            apply(plugin = "naeport.compose")
 
             extensions.configure<ApplicationExtension> {
                 compileSdk = 36
