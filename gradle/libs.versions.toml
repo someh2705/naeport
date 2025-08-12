@@ -33,6 +33,20 @@ kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-p
 ktlint-gradle-plugin = { module = "org.jlleitschuh.gradle:ktlint-gradle", version.ref = "ktlint" }
 
 [bundles]
+default-dependencies = [
+    "androidx-lifecycle-runtime-ktx",
+    "androidx-core-ktx"
+]
+
+default-test-dependencies = [
+    "junit"
+]
+
+default-android-test-dependencies = [
+    "androidx-junit",
+    "androidx-espresso-core"
+]
+
 androidx-compose = [
     "androidx-compose-material3",
     "androidx-compose-ui",
